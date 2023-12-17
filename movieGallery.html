@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select your next content snippet</title>
+
+<style>
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body { 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;
+    background: #302f2f;
+}
+
+.container { 
+    position: relative; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 18px; 
+    width: 900px; 
+    height: 500px; 
+    transition: 0.3s; 
+}
+
+.container .box {
+    position: relative; 
+    background: var(--img);
+    background-position: center;
+    background-size: cover;
+    transition: 0.3s; 
+    display: flex; 
+    justify-self: unset;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container:hover .box {
+    filter: grayscale(1);
+}
+
+.container:hover .box:hover {
+    filter: grayscale(0) brightness(1.20);
+}
+
+
+
+
+.container:has(.one:hover) 
+    {
+        grid-template-columns: 5fr 0.5fr 0.5fr 0.5fr 0.5fr; 
+    }
+
+
+.container:has(.two:hover) 
+    {
+        grid-template-columns: 0.5fr 30fr 0.5fr 0.5fr 0.5fr; 
+    }
+
+
+.container:has(.three:hover) 
+    {
+        grid-template-columns: 0.5fr 0.5fr 12fr 0.5fr 0.5fr; 
+    }
+
+.container:has(.four:hover) 
+    {
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 15fr 0.5fr; 
+    }
+
+.container:has(.five:hover) 
+    {
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 20fr ; 
+    }
+
+
+
+    
+
+.container .box::before {
+    content: '';
+    position: absolute;
+    width: 100%; 
+    height: calc(100% + 2px);
+    background: linear-gradient(#302f2f, transparent , transparent , transparent ,  transparent, #302f2f);
+}
+
+.container .box:nth-child(even) 
+{
+    transform: translateY(15px);
+}
+
+.container .box:nth-child(odd)
+{
+    transform: translateY(-15px);
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <div class="box one" style="--img:url(img1.jpg);" data-text="Ahsoka"></div>
+
+    <div class="box two" style="--img:url(img2.jpg);" data-text="Droid"></div>
+
+    <div class="box three" style="--img:url(img3.jpg);" data-text="Belen"></div>
+
+    <div class="box four" style="--img:url(img4.jpg);" data-text=""></div>
+
+    <div class="box five" style="--img:url(img5.jpg);" data-text=""></div>
+
+</div>
+
+   
+</body>
+</html>
