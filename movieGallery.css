@@ -35,5 +35,14 @@ body {
     align-items: center;
 }
 
+.container:hover .box {
+    filter: grayscale(1);
+}
+
+.container:hover .box:hover {
+    filter: grayscale(0) brightness(1.20);
+}
+
+
 
 
