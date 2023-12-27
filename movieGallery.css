@@ -71,6 +71,27 @@ body {
     }
 
 
+.container .box::before {
+    content: '';
+    position: absolute;
+    width: 100%; 
+    height: calc(100% + 2px);
+    background: linear-gradient(#302f2f, transparent , transparent , transparent ,  transparent, #302f2f);
+}
+
+.container .box:nth-child(even) 
+{
+    transform: translateY(15px);
+}
+
+.container .box:nth-child(odd)
+{
+    transform: translateY(-15px);
+}
+
+
+
+
 
 
 
